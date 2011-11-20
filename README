@@ -1,0 +1,16 @@
+PROJET
+======
+
+Ce projet est un ensemble de script permettant de faire une installation de serveurs avec différents modules.
+
+L'activation des modules se fait en début d'installation via un menu. Chaque module peut être personnalisé via d'autres menu.
+
+De nouveaux modules peuvent être rapidement ajouté via le système de plugin
+
+LICENSE
+=======
+MIT License <http://www.opensource.org/licenses/mit-license.php>
+
+AUTHORS
+=======
+* Simon Leblanc contact@leblanc-simon.eu
