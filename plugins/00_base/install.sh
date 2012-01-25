@@ -13,7 +13,7 @@ function base_install()
     ${INSTALL_BIN} update
     ${INSTALL_BIN} upgrade
     
-    ${INSTALL_BIN} update bzr git-core subversion python-subversion build-essential lftp proftpd at fail2ban ntp zip htp rsync iptables
+    ${INSTALL_BIN} install bzr git-core subversion python-subversion build-essential lftp proftpd at fail2ban ntp zip htp rsync iptables
     
     return 0
 }

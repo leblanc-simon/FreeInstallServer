@@ -20,7 +20,7 @@ create_log_dir
 # On install dialog si besoin
 has_dialog=$(${DIALOG} -v)
 if [ "$?" != 0 ]; then
-    ${INSTALL_BIN} dialog
+    ${INSTALL_BIN} install dialog
 fi
 
 # On récupère l'ensemble des plugins
