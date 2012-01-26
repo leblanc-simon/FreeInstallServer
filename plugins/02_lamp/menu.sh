@@ -20,6 +20,7 @@ options[lamp]=$(dialog --stdout \
                 )
 
 lamp_php_versions=""
+lamp_mysql_pass=""
 
 for option in ${options[lamp]}; do
     option=$(echo ${option} | sed 's/"//g')
@@ -32,6 +33,14 @@ for option in ${options[lamp]}; do
                         "5_3" "PHP 5.3" on \
                         "5_2" "PHP 5.2" off \
                         "4"   "PHP 4"   off \
+                        )
+    fi
+    
+    if [ "${option}" == "mysql" ]; then
+        lamp_mysql_pass=$(${DIALOG} --stdout \
+                        --backtitle "Mot de passe root de MySQL" \
+                        --title "Mot de passe root de MySQL" \
+                        --inputbox "Mot de passe root souhaité" 20 61 "${lamp_default_mysql_pass}"
                         )
     fi
 done

@@ -11,4 +11,5 @@
 lamp_default_mysql_pass=""
 
 lamp_php4_version="4.4.9"
-lamp_php5_version="5.2.17"
+lamp_php52_version="5.2.17"
+lamp_php53_version="5.3.8"
