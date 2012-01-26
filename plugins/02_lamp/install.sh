@@ -43,7 +43,7 @@ function lamp_install_php()
     fi
     
     # On installe chaque version voulue
-    for version in ${lamp_php_versions[@]}; do
+    for version in ${lamp_php_versions}; do
         version=$(echo ${version} | sed 's/"//g')
         
         # PHP 5.3
