@@ -46,6 +46,7 @@ function execute()
 	
 	if [ "${return_value}" -ne "0" ]; then
     	logError "Erreur dans l'execution de la commande : ${return_value} - ${str_command}"
+	logError "${result}"
 	fi
 	
 	if [ "${result}" != "" ]; then
