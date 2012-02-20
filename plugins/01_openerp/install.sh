@@ -45,7 +45,7 @@ function openerp_install_openerp()
     # Création utilisateur openerp + mdp par défault
     local salt=$(head -c 10 /dev/urandom | perl -e 'use MIME::Base64 qw(encode_base64);print encode_base64(<>);' | sed "s/\(.\{2\}\).*/\1/")
     local cpass=$(perl -e "print crypt('${openerp_pass}', '${salt}');")
-    adduser -c ${openerp_user} -m -s /bin/bash -p ${cpass} ${openerp_user}
+    useradd -c ${openerp_user} -m -s /bin/bash -p ${cpass} ${openerp_user}
     if [ "$?" != "0" ]; then
       logFatal "L'utilisateur \"${openerp_user}\" n'a pas été créé !"
     fi
