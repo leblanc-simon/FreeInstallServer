@@ -100,7 +100,9 @@ function openerp_install_create_db()
 {
     # En tant que postgres, créer user openerp avec mdp généré (avec envoi par mail + affichage fichier log :
     local pass_gen=`head -c 10 /dev/urandom | perl -e 'use MIME::Base64 qw(encode_base64);print encode_base64(<>);' | sed "s/\(.\{8\}\).*/\1/"`
+    # su postgres
     psql -c "CREATE USER ${openerp_user} WITH PASSWORD '${pass_gen}' CREATEDB NOCREATEUSER;"
+    # exit
     logInfo "Mot de passe user postgres ${openerp_user} : ${pass_gen}"
     
     return 0
