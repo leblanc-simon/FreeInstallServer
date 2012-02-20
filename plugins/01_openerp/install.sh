@@ -86,6 +86,7 @@ function openerp_install_openerp()
     mv openerp-web-${openerp_version} /home/${openerp_user}/openerp/web
 
     # Populate 
+    # Suppression de cette ligne en 6.1
     /home/${openerp_user}/openerp/web/lib/populate.sh
 
     # Suppression cherry*
