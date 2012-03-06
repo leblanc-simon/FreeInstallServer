@@ -91,6 +91,9 @@ function lamp_install_php()
     suphp_handler=""
     suphp_mod_apache=""
     
+    # Installation des dépendances
+    lamp_install_deps
+    
     for version in ${lamp_php_versions}; do
         version=$(echo ${version} | sed 's/"//g')
         
