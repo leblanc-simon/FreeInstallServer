@@ -76,10 +76,14 @@ function lamp_install_compile_php()
 {
     version="$1"
     configure="$2"
+    current_dir=`pwd`
     
+    cd "${COMPILATION_DIRECTORY}/php-${version}"
     execute "${COMPILATION_DIRECTORY}/php-${version}/${configure}"
     execute "make -f ${COMPILATION_DIRECTORY}/php-${version}/Makefile"
     execute "make -f ${COMPILATION_DIRECTORY}/php-${version}/Makefile install"
+    
+    cd "${current_dir}"
 }
 
 #
