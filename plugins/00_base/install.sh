@@ -17,7 +17,7 @@ function base_install()
     ## Proftpd toune avec inetd
     debconf-set-selections <<< "proftpd-basic shared/proftpd/inetd_or_standalone select	inetd"
     
-    execute "${INSTALL_BIN} install bzr git-core subversion python-subversion build-essential lftp proftpd-basic at fail2ban ntp zip htp rsync iptables"
+    execute "${INSTALL_BIN} install bzr git-core subversion python-subversion build-essential lftp proftpd-basic at fail2ban ntp zip htp rsync iptables curl"
     
     return 0
 }
