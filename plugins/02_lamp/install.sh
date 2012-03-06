@@ -40,13 +40,13 @@ function lamp_install_mysql()
 function lamp_install_deps()
 {   
     # PHP 5.4
-    execute "${INSTALL_BIN} libxml2-dev libssl-dev libbz2-dev libcurl4-openssl-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libc-client-dev libicu-dev libmcrypt-dev libxslt-dev"
+    execute "${INSTALL_BIN} install libxml2-dev libssl-dev libbz2-dev libcurl4-openssl-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libc-client-dev libicu-dev libmcrypt-dev libxslt-dev"
     
     # PHP 5.3 (à ajouter à PHP 5.4)
-    execute "${INSTALL_BIN} libmysqlclient-dev"
+    execute "${INSTALL_BIN} install libmysqlclient-dev"
     
     # PHP 5.2 (à ajouter à PHP 5.3)
-    execute "${INSTALL_BIN} libmhash-dev"
+    execute "${INSTALL_BIN} install libmhash-dev"
     
     # PHP 4 (à ajouter à PHP 5.2)
     execute "${INSTALL_BIN} install flex bison m4"
