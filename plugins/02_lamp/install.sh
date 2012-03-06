@@ -111,13 +111,13 @@ function lamp_install_php()
         elif [ "${version}" == "5_3" ]; then
             lamp_install_download_extract_php "${lamp_php53_version}"
             lamp_install_compile_php "${lamp_php53_version}" "${lamp_php53_configure}"
-            php_path="\/usr\/local\/php54\/bin\/php-cgi"
+            php_path="\/usr\/local\/php53\/bin\/php-cgi"
         
         # PHP 5.2
         elif [ "${version}" == "5_2" ]; then
             lamp_install_download_extract_php "${lamp_php52_version}"
             lamp_install_compile_php "${lamp_php52_version}" "${lamp_php52_configure}"
-            php_path="\/usr\/local\/php54\/bin\/php-cgi"
+            php_path="\/usr\/local\/php52\/bin\/php-cgi"
         
         # PHP 4
         elif [ "${version}" == "4" ]; then
