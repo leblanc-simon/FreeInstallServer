@@ -29,10 +29,28 @@ for option in ${options[lamp]}; do
         lamp_php_versions=$(${DIALOG} --stdout \
                         --backtitle "Versions de PHP" \
                         --title "Versions de PHP" \
-                        --checklist "Sélectionnez les version de PHP à installer" 20 61 5 \
-                        "5_3" "PHP 5.3" on \
+                        --checklist "Sélectionnez les versions de PHP à installer" 20 61 5 \
+                        "5_4" "PHP 5.4" on \
+                        "5_3" "PHP 5.3" off \
                         "5_2" "PHP 5.2" off \
                         "4"   "PHP 4"   off \
+                        )
+        
+        lamp_list_default=""
+        for php_version in ${lamp_php_versions}; do
+          if [ "${lamp_list_default}" == "" ]; then
+            lamp_list_default_state="on"
+          else
+            lamp_list_default_state="off"
+          fi
+          
+          lamp_list_default="${lamp_list_default} ${php_version} \"PHP `echo ${php_version} | sed 's/_/./' | sed 's/\"//g'`\" ${lamp_list_default_state}"
+        done
+        
+        lamp_default_php=$(echo ${lamp_list_default} | xargs ${DIALOG} --stdout \
+                        --backtitle "Versions de PHP" \
+                        --title "Versions de PHP" \
+                        --radiolist "Sélectionnez la version de PHP à utiliser par défaut" 20 61 5
                         )
     fi
     

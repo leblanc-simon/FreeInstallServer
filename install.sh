@@ -14,8 +14,8 @@
 # On inclue les bibliothèque
 . "${LIB_DIRECTORY}/00_load.sh"
 
-# On initialise les logs
-create_log_dir
+# On initialise les répertoires
+create_essentials_dirs
 
 # On install dialog si besoin
 has_dialog=$(${DIALOG} -v)
