@@ -60,13 +60,10 @@ function lamp_install_deps()
 function lamp_install_download_extract_php()
 {
     version="$1"
-    current_dir=`pwd`
     
     execute "wget http://fr2.php.net/get/php-${version}.tar.bz2/from/this/mirror -O ${TEMPORARY_DIRECTORY}/php-${version}.tar.bz2"
-    execute "cd ${COMPILATION_DIRECTORY} && tar -xjf ${TEMPORARY_DIRECTORY}/php-${version}.tar.bz2"
+    execute "tar -xjf ${TEMPORARY_DIRECTORY}/php-${version}.tar.bz2 -C ${COMPILATION_DIRECTORY} "
     execute "rm -f ${TEMPORARY_DIRECTORY}/php-${version}.tar.bz2"
-    
-    execute "cd ${current_dir}"
 }
 
 
@@ -79,13 +76,10 @@ function lamp_install_compile_php()
 {
     version="$1"
     configure="$2"
-    current_dir=`pwd`
     
-    execute "cd ${COMPILATION_DIRECTORY}/php-${version}"
-    execute "${configure}"
-    execute "make && make install"
-    
-    execute "cd ${current_dir}"
+    execute "${COMPILATION_DIRECTORY}/php-${version}/${configure}"
+    execute "make -f ${COMPILATION_DIRECTORY}/php-${version}/Makefile"
+    execute "make -f ${COMPILATION_DIRECTORY}/php-${version}/Makefile install"
 }
 
 #
