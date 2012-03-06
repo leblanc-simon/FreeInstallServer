@@ -11,7 +11,7 @@
 function base_install()
 {
     execute "${INSTALL_BIN} update"
-    execute "${INSTALL_BIN} -o Dpkg::Options::='--force-confold' upgrade"
+    execute "${INSTALL_BIN} -o Dpkg::Options::=--force-confold upgrade"
     
     # Configuration des options par défaut (évite d'avoir les fenêtres qui pose les questions)
     ## Proftpd toune avec inetd
